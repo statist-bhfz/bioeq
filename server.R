@@ -1,4 +1,4 @@
-Sys.setlocale("LC_ALL","Russian_Russia.20866")
+# Sys.setlocale("LC_ALL","Russian_Russia.20866")
 
 library(markdown)
 library(ggplot2)
@@ -71,8 +71,8 @@ shinyServer(function(input, output, session) {
             print(p)
         }
         if (input$plotType == "test") {
-            p <- ggplot(DAT()$data[DAT()$data$drug == "T", ], aes(x=time, y=conc, 
-                                                              colour=subj)) +
+            p <- ggplot(DAT()$data[DAT()$data$drug == "T", ], 
+                        aes(x=time, y=conc, colour=subj)) +
                 geom_line(size=0.6) + geom_point() + 
                 guides(col = guide_legend(ncol = 4)) +
                 theme(legend.title=element_blank()) +
@@ -82,14 +82,47 @@ shinyServer(function(input, output, session) {
             print(p)
         }
         if (input$plotType == "ref") {
-            p <- ggplot(DAT()$data[DAT()$data$drug == "R", ], aes(x=time, y=conc, 
-                                                              colour=subj)) +
+            p <- ggplot(DAT()$data[DAT()$data$drug == "R", ], 
+                        aes(x=time, y=conc, colour=subj)) +
                 geom_line(size=0.6) + geom_point() + 
                 guides(col = guide_legend(ncol = 4)) +
                 theme(legend.title=element_blank()) +
                 labs(list(title = "Фармакокинетические кривые для препарата R", 
                           x = "Время, ч", 
                           y = "Концентрация"))
+            print(p)
+        }
+        
+        if (input$plotType == "both_log") {
+            p <- ggplot(DAT()$data, aes(x=time, y=log(conc), colour=subj2)) +
+                geom_line(size=0.6) + geom_point() + 
+                guides(col = guide_legend(ncol = 4)) +
+                theme(legend.title=element_blank()) +
+                labs(list(title = "Фармакокинетические кривые для препаратов T и R", 
+                          x = "Время, ч", 
+                          y = "Натуральный логарифм концентрации"))
+            print(p)
+        }
+        if (input$plotType == "test_log") {
+            p <- ggplot(DAT()$data[DAT()$data$drug == "T", ], 
+                        aes(x=time, y=log(conc), colour=subj)) +
+                geom_line(size=0.6) + geom_point() + 
+                guides(col = guide_legend(ncol = 4)) +
+                theme(legend.title=element_blank()) +
+                labs(list(title = "Фармакокинетические кривые для препарата T", 
+                          x = "Время, ч", 
+                          y = "Натуральный логарифм концентрации"))
+            print(p)
+        }
+        if (input$plotType == "ref_log") {
+            p <- ggplot(DAT()$data[DAT()$data$drug == "R", ], 
+                        aes(x=time, y=log(conc), colour=subj)) +
+                geom_line(size=0.6) + geom_point() + 
+                guides(col = guide_legend(ncol = 4)) +
+                theme(legend.title=element_blank()) +
+                labs(list(title = "Фармакокинетические кривые для препарата R", 
+                          x = "Время, ч", 
+                          y = "Натуральный логарифм концентрации"))
             print(p)
         }
     })

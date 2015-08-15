@@ -1,4 +1,4 @@
-
+﻿
 
 
 shinyUI(navbarPage("Биоэквивалентность v0.3",
@@ -89,7 +89,7 @@ shinyUI(navbarPage("Биоэквивалентность v0.3",
                             tableOutput("table2"),
                             tags$hr(),
                             
-                            tags$h4("90% доверительные интервалы для Соотношения T/R"),
+                            tags$h4("90% доверительные интервалы для соотношения T/R"),
                             tableOutput("table3")
                    ),
                    

@@ -49,8 +49,8 @@ shinyServer(function(input, output, session) {
         ci2 <- ci.auc$fixed[2, ]
         ci2 <- exp(ci2)*100
         ci1_2 <- rbind(ci1, ci2)
-        colnames(ci1_2) <- c("Нижняя граница 90% ДИ, %", "Соотношение T/R, %",
-                             "Верхняя граница 90% ДИ, %")
+        colnames(ci1_2) <- c("Нижн\u044f\u044f граница 90% ДИ, %", "Соотношение T/R, %",
+                             "Верхн\u044f\u044f граница 90% ДИ, %")
         rownames(ci1_2) <- c("Cmax", "AUC(0-t)")
         DAT <- list(data=data, model.Cmax=model.Cmax, model.auc=model.auc,
                     ci1_2=ci1_2)

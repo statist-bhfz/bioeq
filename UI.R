@@ -1,4 +1,4 @@
-﻿
+
 
 
 shinyUI(navbarPage("Биоэквивалентность v0.3",
@@ -29,7 +29,7 @@ shinyUI(navbarPage("Биоэквивалентность v0.3",
                                         tags$br(),
                                         "seq - последовательность (1 - RT, 2 - TR);",
                                         tags$br(),
-                                        " prd - период;;",
+                                        " prd - период;",
                                         tags$br(),
                                         "drug - препарат;",
                                         tags$br(),

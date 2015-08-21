@@ -1,8 +1,8 @@
 name: bioeq
 account: statist
 server: shinyapps.io
-bundleId: 240336
+bundleId: 243342
 url: https://statist.shinyapps.io/bioeq
-when: 1439626412.37984
+when: 1439915453.06852
 asMultiple: FALSE
 asStatic: FALSE

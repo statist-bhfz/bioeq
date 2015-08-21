@@ -42,8 +42,8 @@ shinyUI(navbarPage("Биоэквивалентность v0.3",
                                     
                                     "Скачать тестовый набор данных можно по",
                                     tags$a("этой ссылке", 
-                                      href="https://github.com/statist-bhfz/bioeq/blob/master/testdata.txt",
-                                      target="_blank"), ".",
+                                      href="https://dl.dropboxusercontent.com/u/50959048/testdata.txt",
+                                      target="_blank"), " (правый клик - сохранить как...).",
                                     
                                     tags$hr(),
                                     
@@ -95,7 +95,7 @@ shinyUI(navbarPage("Биоэквивалентность v0.3",
                    
                    navbarMenu("...",
                               tabPanel("Руководство",
-                                       "Coming soon"
+                                       includeMarkdown("README.md")
                               ),
                               tabPanel("О программе",
                                        "Для некоммерческого использования",
